@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "2.0.1",
+  "description": "ADev Portfoilo Website",
+  "main": "index.js",
+  "repository": "git@github.com:amal-chandran/amal-chandran.github.io.git",
+  "author": "Amal Chandran <amalchandrandev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev-css": "npx sass scss/style.scss css/style.min.css -w",
+    "build-css": "npx sass scss/style.scss css/style.min.css"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
+    "scss": "^0.2.4"
+  }
+}

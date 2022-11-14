@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Amal Chandran | Portfolio</title>
+  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <style>
+    /* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300); */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .loader {
+      background-color: #f1c40f;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      z-index: 100;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .center-head {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .loader h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      margin-top: 2rem;
+    }
+
+    .body {
+      position: absolute;
+      top: 50%;
+      margin-left: -50px;
+      left: 50%;
+      animation: speeder 0.4s linear infinite;
+    }
+
+    .body>span {
+      height: 5px;
+      width: 35px;
+      background: #000;
+      position: absolute;
+      top: -19px;
+      left: 60px;
+      border-radius: 2px 10px 1px 0;
+    }
+
+    .base span {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-right: 100px solid #000;
+      border-bottom: 6px solid transparent;
+    }
+
+    .base span:before {
+      content: '';
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #000;
+      position: absolute;
+      right: -110px;
+      top: -16px;
+    }
+
+    .base span:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 0 solid transparent;
+      border-right: 55px solid #000;
+      border-bottom: 16px solid transparent;
+      top: -16px;
+      right: -98px;
+    }
+
+    .face {
+      position: absolute;
+      height: 12px;
+      width: 20px;
+      background: #000;
+      border-radius: 20px 20px 0 0;
+      transform: rotate(-40deg);
+      right: -125px;
+      top: -15px;
+    }
+
+    .face:after {
+      content: '';
+      height: 12px;
+      width: 12px;
+      background: #000;
+      right: 4px;
+      top: 7px;
+      position: absolute;
+      transform: rotate(40deg);
+      transform-origin: 50% 50%;
+      border-radius: 0 0 0 2px;
+    }
+
+    .body>span>span:nth-child(1),
+    .body>span>span:nth-child(2),
+    .body>span>span:nth-child(3),
+    .body>span>span:nth-child(4) {
+      width: 30px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      animation: fazer1 0.2s linear infinite;
+    }
+
+    .body>span>span:nth-child(2) {
+      top: 3px;
+      animation: fazer2 0.4s linear infinite;
+    }
+
+    .body>span>span:nth-child(3) {
+      top: 1px;
+      animation: fazer3 0.4s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .body>span>span:nth-child(4) {
+      top: 4px;
+      animation: fazer4 1s linear infinite;
+      animation-delay: -1s;
+    }
+
+    @keyframes fazer1 {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -80px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fazer2 {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -100px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fazer3 {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -50px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fazer4 {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -150px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes speeder {
+      0% {
+        transform: translate(2px, 1px) rotate(0deg);
+      }
+
+      10% {
+        transform: translate(-1px, -3px) rotate(-1deg);
+      }
+
+      20% {
+        transform: translate(-2px, 0px) rotate(1deg);
+      }
+
+      30% {
+        transform: translate(1px, 2px) rotate(0deg);
+      }
+
+      40% {
+        transform: translate(1px, -1px) rotate(1deg);
+      }
+
+      50% {
+        transform: translate(-1px, 3px) rotate(-1deg);
+      }
+
+      60% {
+        transform: translate(-1px, 1px) rotate(0deg);
+      }
+
+      70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+      }
+
+      80% {
+        transform: translate(-2px, -1px) rotate(1deg);
+      }
+
+      90% {
+        transform: translate(2px, 1px) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+      }
+    }
+
+    .longfazers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .longfazers span {
+      position: absolute;
+      height: 2px;
+      width: 20%;
+      background: #000;
+    }
+
+    .longfazers span:nth-child(1) {
+      top: 20%;
+      animation: lf 0.6s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .longfazers span:nth-child(2) {
+      top: 40%;
+      animation: lf2 0.8s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .longfazers span:nth-child(3) {
+      top: 60%;
+      animation: lf3 0.6s linear infinite;
+    }
+
+    .longfazers span:nth-child(4) {
+      top: 80%;
+      animation: lf4 0.5s linear infinite;
+      animation-delay: -3s;
+    }
+
+    @keyframes lf {
+      0% {
+        left: 200%;
+      }
+
+      100% {
+        left: -200%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes lf2 {
+      0% {
+        left: 200%;
+      }
+
+      100% {
+        left: -200%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes lf3 {
+      0% {
+        left: 200%;
+      }
+
+      100% {
+        left: -100%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes lf4 {
+      0% {
+        left: 200%;
+      }
+
+      100% {
+        left: -100%;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader">
+    <div class="body">
+      <span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="base">
+        <span></span>
+        <div class="face"></div>
+      </div>
+    </div>
+    <div class="longfazers">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="center-head">
+      <h1>amal land soon ...</h1>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+
+  <nav id="start" class="pl-1 pl-md-2 pl-lg-3 navbar navbar-expand-md navbar-dark bg-none">
+    <a class="navbar-brand" href="#home">
+      <img src="./img/nav-logo.png" alt="ADev" height="28px" />
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" data-scroll href="#start">Start</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-scroll href="#work">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-scroll href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-scroll href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-scroll href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="container">
+      <div style="height: 100%;" class="section-tags">
+        <div class="hv-80 home-center-head flex-column d-flex align-items-center justify-content-center">
+          <div class="home-center-text" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+            <!-- <div class="section-tags"> -->
+
+            <div class="h1-tags removeAfter">
+              <h1>
+                Hey,
+              </h1>
+            </div>
+            <div class="h1-tags my-name removeAfter">
+              <h1>
+                <span class="h2">
+                  My name is
+                </span>
+                <span id="adev-name-2" class="text-primary text-weight-bold">ADev
+                  <!-- <i class="em em-sunglasses"></i> -->
+                  😎
+                </span>
+                <span id="adev-name-1" class="text-primary text-weight-bold">
+                  Amal Chandran
+                </span>
+              </h1>
+            </div>
+            <div class="h2-tags removeAfter">
+              <h2>
+                i
+                <span class="font-italic font-weight-bold">
+                  design
+                </span>
+                and
+                <span class="font-weight-bold">
+                  develop
+                </span>
+                <span id="app-type"></span>
+              </h2>
+              <div></div>
+            </div>
+            <div class="mt-5 h4 let-me-show text-muted pl-2 text-weight-bold">
+              Let me show you ...
+            </div>
+          </div>
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <div class="section-wrapper">
+      <section id="work" class="container">
+        <div class="section-tags" data-aos="zoom-in">
+          <h1 class="add-tags">
+            Work
+          </h1>
+
+          <div class="row-tags">
+            <div class="gallery">
+              <div class="row justify-content-between align-items-center">
+                <!-- CDR/IPDR Analyzer -->
+                <div data-tilt data-aos="zoom-in" data-details="details-8" style="
+                      background-image: url('./img/projectImg/cdr-analyzer.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-1 infinite pulse delay-2s"></div>
+                <div id="details-8" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-1">
+                  <h3 class="font-weight-bold text-underline">
+                    CDR/IPDR Analyzer
+                  </h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #D3
+                    </span>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Node.Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Neo4j
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    CDR Analyzer is a analytics and virtulization platform on
+                    CDR/IPDR datasets. virtulization models including
+                    graph,map,timeline,table etc.It is my main project in
+                    college
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+                <!-- CDR/IPDR Analyzer -->
+                <!-- College Management App -->
+                <div data-tilt data-aos="zoom-in" data-details="details-9" style="
+                      background-image: url('./img/projectImg/college-management.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-1 infinite pulse delay-2s"></div>
+                <div id="details-9" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-1">
+                  <h3 class="font-weight-bold text-underline">
+                    College Management App
+                  </h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #Laravel
+                    </span>
+                    <span class="text-muted px-1">
+                      #Bootstrap
+                    </span>
+                    <span class="text-muted px-1">
+                      #PHP
+                    </span>
+                    <span class="text-muted px-1">
+                      #MySql
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    College Management application is a complete attendance
+                    management system for a college. Where every thing is
+                    dynamicaly configureable. Reports and analytics are also
+                    avaliable.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+                <!-- College Management App -->
+                <div data-tilt data-aos="zoom-in" data-details="details-1" style="
+                      background-image: url('./img/projectImg/video-call.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-1 infinite pulse delay-2s"></div>
+                <div id="details-1" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-1">
+                  <h3 class="font-weight-bold text-underline">Video Call</h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Kurento
+                    </span>
+                    <span class="text-muted px-1">
+                      #WebRTC
+                    </span>
+                    <span class="text-muted px-1">
+                      #React Native
+                    </span>
+                    <span class="text-muted px-1">
+                      #Node.Js
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    A sclable webrtc based many-to-many video chat.The Kurento
+                    Media server act as an SFU. Node.Js based socket.io does
+                    the signelling part.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+                <div data-tilt data-aos="zoom-in" data-details="details-1" style="
+                      background-image: url('./img/projectImg/twitterClone.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-0 infinite pulse delay-2s"></div>
+                <div id="details-1" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-0">
+                  <h3 class="font-weight-bold text-underline">Twitter App</h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Material-UI
+                    </span>
+                    <span class="text-muted px-1">
+                      #React-Router
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This is a basic mock application of twitter. It has been
+                    developed as part of an internship at Hasura. This was my
+                    starting project to react echo system.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+                <div data-tilt data-aos="zoom-in" data-details="details-2" style="
+                      background-image: url('./img/projectImg/iplbox.png');
+                    " class="gallery-image col-md-6 col-lg-4 infinite pulse delay-2s order-1"></div>
+
+                <div id="details-3" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-7">
+                  <h3 class="font-weight-bold text-underline">Swiggy App</h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Material-UI
+                    </span>
+                    <span class="text-muted px-1">
+                      #React-Router
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This is a clone application of swiggy, the food ordering
+                    app. This app handles most of the use interactions and has
+                    a fully functional cart.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+
+                <div data-details="details-3" data-aos="zoom-in" data-tilt style="
+                      background-image: url('./img/projectImg/swiggy.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-6 infinite pulse delay-2s"></div>
+
+                <div id="details-2" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-1">
+                  <h3 class="font-weight-bold text-underline">IPL Box App</h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Material-UI
+                    </span>
+                    <span class="text-muted px-1">
+                      #React-Router
+                    </span>
+                    <span class="text-muted px-1">
+                      #REST
+                    </span>
+                    <span class="text-muted px-1">
+                      #Hasura
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This is an interface app for an alexa service which
+                    predicts cricket scores. This is a team project where
+                    backend is created in Flask. This app consumes the REST
+                    api to execute functions.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+
+                <div data-details="details-4" data-aos="zoom-in" data-tilt style="
+                      background-image: url('./img/projectImg/shopping-app.jpg');
+                    " class="gallery-image col-md-6 col-lg-4 order-3 infinite pulse delay-2s"></div>
+                <div id="details-6" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-4">
+                  <h3 class="font-weight-bold text-underline">
+                    Konik Tech Site
+                  </h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #Wordpress
+                    </span>
+                    <span class="text-muted px-1">
+                      #Bootstrap
+                    </span>
+                    <span class="text-muted px-1">
+                      #JQuery
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This is a project for a client. Its based on Wordpress. It
+                    was designed to promote their service firm. Its created
+                    using basic html and custom workpress theme.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+                <div data-tilt data-aos="zoom-in" data-details="details-5" style="
+                      background-image: url('./img/projectImg/sporta.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-5 infinite pulse delay-2s"></div>
+
+                <div id="details-4" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-3">
+                  <h3 class="font-weight-bold text-underline">
+                    Shopping App
+                  </h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #Laravel
+                    </span>
+                    <span class="text-muted px-1">
+                      #Bootstrap
+                    </span>
+                    <span class="text-muted px-1">
+                      #Postgres
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This is a basic shopping app. Contain fully working cart.
+                    It has also some range of inventory management built in.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+
+                <div data-tilt data-aos="zoom-in" data-details="details-6" style="
+                      background-image: url('./img/projectImg/konik-tech.png');
+                    " class="gallery-image col-md-6 col-lg-4 order-3 infinite pulse delay-2s"></div>
+
+                <div id="details-5" data-aos="zoom-in" style="background-color: transparent;"
+                  class="col-md-6 col-lg-4 gallery-details order-5">
+                  <h3 class="font-weight-bold text-underline">Sporta App</h3>
+                  <h6>
+                    <span class="text-muted px-1">
+                      #React-Js
+                    </span>
+                    <span class="text-muted px-1">
+                      #Material-UI
+                    </span>
+                    <span class="text-muted px-1">
+                      #React-Router
+                    </span>
+                    <span class="text-muted px-1">
+                      #REST
+                    </span>
+                    <span class="text-muted px-1">
+                      #Hasura
+                    </span>
+                  </h6>
+                  <p class="desc-text">
+                    This was a website and event management app. Built for
+                    managing and controlling the sports events of cep.
+                  </p>
+                  <p>
+                    <a href="#">
+                      <i class="fab mr-1 fa-github fa-md"></i>
+                      Source Code
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="about" class="container">
+      <div class="section-tags">
+        <h1 data-aos="zoom-in" class="add-tags">
+          About
+        </h1>
+        <div class="row">
+          <div style="font-size: 1.5rem;" class="col-lg-6">
+            <div class="p-tags removeAfter" data-aos="zoom-in">
+              <p>
+                The
+                <span class="text-success font-weight-bold">
+                  passion
+                </span>
+                is the behind the screen runner. The first time met computer
+                as friend of mine. Like every other friendship's beginig we
+                are also exchanged the love while playing.
+              </p>
+            </div>
+            <div class="p-tags removeAfter" data-aos="zoom-in">
+              <p>
+                When start to talking with
+
+                <span class="code-font-family font-weight-bold text-primary">"Hello World"</span>. I started getting
+                familer with the language we both can
+                talk. Thus our bond gets more stronger. To continue the
+                relationship i joined the college with same digree as she.
+              </p>
+            </div>
+
+            <div class="p-tags removeAfter" data-aos="zoom-in">
+              <p>
+                Some of my better colleague and teachers supported this and
+                enrich its bond. Even though new friends come to my life to
+                share their love. I always like to stick with her.
+              </p>
+            </div>
+          </div>
+          <div data-aos="zoom-in" class="col-lg-6">
+            <div id="timeline" style="height: 100%;" class="d-flex flex-column">
+              <div class="d-flex">
+                <h3>Timeline</h3>
+              </div>
+              <div class="timeline">
+                <ul>
+                  <li v-for="(info, index) in timeline_data" v-bind:key="index">
+                    <span></span>
+                    <div>{{ info.school }}</div>
+                    <div>{{ info.address }}</div>
+                    <div>{{ info.course }}</div>
+                    <div class="year">
+                      <span>{{ info.yearEnd }}</span>
+                      <span>{{ info.yearStart }}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-sm-auto">
+                <nav style="cursor: pointer;" class="nav nav-pills">
+                  <a v-bind:class="['nav-link',(selected_option == name) ? 'active':'']"
+                    v-for="(name,index) in option_list" v-bind:key="name"
+                    v-on:click="selected_option = name">{{name}}</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-wrapper">
+      <section id="skills" class="container">
+        <div class="section-tags">
+          <h1 data-aos="zoom-in" class="add-tags mb-4">
+            Skills
+          </h1>
+          <div data-aos="zoom-in" id="periodic_table" class="periodic-table">
+            <div class="empty-spacer-1"></div>
+            <div class="empty-spacer-2"></div>
+
+            <div v-for="elements_data in periodic_table_data" class="periodic-element" v-bind:class="elements_data.type"
+              v-bind:data-description="elements_data.hover_text">
+              <div class="periodic-element-inner">
+                <div class="title">{{elements_data.title}}</div>
+                <div class="description">{{elements_data.description}}</div>
+              </div>
+            </div>
+          </div>
+          <div data-aos="zoom-in" class="legend-table">
+            <div class="legend-table__wrapper">
+              <span>
+                <span class="legend-table__marker type-1"></span>
+                <span class="legend-table__text">Web</span>
+              </span>
+              <span>
+                <span class="legend-table__marker type-2"></span>
+                <span class="legend-table__text">Data Science & ML</span>
+              </span>
+
+              <span>
+                <span class="legend-table__marker type-3"></span>
+                <span class="legend-table__text">Mobile</span>
+              </span>
+
+              <span>
+                <span class="legend-table__marker type-4"></span>
+                <span class="legend-table__text">Tools</span>
+              </span>
+
+              <br />
+              <div class="legend-table__direction d-lg-block d-none">
+                <span>&#8594; &ensp; Across the table: Importance</span>
+              </div>
+              <div class="legend-table__direction d-lg-block d-none">
+                <span>&#8595; &ensp; Down the table: Least Time Spent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="section-wrapper contact-bg">
+      <section id="contact" class="container">
+        <div class="section-tags">
+          <h1 data-aos="zoom-in" class="add-tags mb-4">
+            Contact
+          </h1>
+          <div class="row-tags mt-5 pb-5">
+            <div class="row flex-column" style="font-size: 2rem;">
+              <div data-aos="zoom-in" class="col">
+                <i class="fas fa-at fa-lg text-primary"></i>
+                <a class="text-white text-decoration-none" href="mailto:amalchandran.native@gmail.com">
+                  amalchandran.native
+                </a>
+              </div>
+              <div data-aos="zoom-in" class="col mt-5">
+                <i class="fab fa-github fa-lg text-primary"></i>
+                <a class="text-white text-decoration-none" href="https://github.com/amal-chandran">
+                  /amal-chandran
+                </a>
+              </div>
+              <div data-aos="zoom-in" class="col mt-5">
+                <i class="fab fa-twitter fa-lg text-primary"></i>
+                <a class="text-white text-decoration-none" href="https://twitter.com/amalchandran_me">
+                  /amalchandran_me
+                </a>
+              </div>
+              <div data-aos="zoom-in" class="col mt-5">
+                <i class="fas fa-mobile fa-lg text-primary"></i>
+                <a class="text-white text-decoration-none" href="tel:+91-8078361657">
+                  +91-8078361657
+                </a>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center h5 text-light mb-auto font-weight-bold" style="">
+          <i class="fas fa-code fa-xs text-info"></i>
+          with <i class="fas fa-heart fa-xs text-danger"></i> by Amal
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script>
+    AOS.init();
+
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var periodic_table_data = [
+      {
+        title: 'Js',
+        description: 'JavaScript',
+        hover_text: 'The best loving lagnuage',
+        type: ['type-1'],
+      },
+      {
+        title: 'Py',
+        description: 'Python',
+        hover_text: 'The advanced programing companion',
+        type: ['type-2'],
+      },
+      {
+        title: 'Ph',
+        description: 'PHP',
+        hover_text: 'The simple and easy problem solver companion.',
+        type: ['type-1'],
+      },
+      {
+        title: 'Ht',
+        description: 'HTML',
+        hover_text: 'The ui structuring',
+        type: ['type-1'],
+      },
+      {
+        title: 'Cs',
+        description: 'CSS',
+        hover_text: 'The ui styling & beautifying',
+        type: ['type-1'],
+      },
+      {
+        title: 'Ra',
+        description: 'React',
+        hover_text: 'The most used ui framework',
+        type: ['type-1'],
+      },
+      {
+        title: 'Dt',
+        description: 'D3',
+        hover_text: 'The beautiful visualization on data',
+        type: ['type-1'],
+      },
+      {
+        title: 'Ag',
+        description: 'Angular 2',
+        hover_text: 'The 2nd most used ui framework',
+        type: ['type-1'],
+      },
+      {
+        title: 'Nd',
+        description: 'Node.Js',
+        hover_text: 'The most used backend runtime',
+        type: ['type-1'],
+      },
+
+      {
+        title: 'Dj',
+        description: 'Django',
+        hover_text: 'The python web companion',
+        type: ['type-1'],
+      },
+      {
+        title: 'Re',
+        description: 'REST',
+        hover_text: 'The data sharing method',
+        type: ['type-1'],
+      },
+      {
+        title: 'Gq',
+        description: 'Graph QL',
+        hover_text: 'The loved more than rest',
+        type: ['type-1'],
+      },
+      {
+        title: 'Np',
+        description: 'Numpy',
+        hover_text: 'Still learing the math',
+        type: ['type-2'],
+      },
+      {
+        title: 'Ke',
+        description: 'Keras',
+        hover_text: 'Still learing to learn',
+        type: ['type-2'],
+      },
+      {
+        title: 'Fl',
+        description: 'Flutter',
+        hover_text: 'The loved mobile platform',
+        type: ['type-3'],
+      },
+      {
+        title: 'Lv',
+        description: 'Laravel',
+        hover_text: 'The most used backend framework',
+        type: ['type-1'],
+      },
+      {
+        title: 'Pg',
+        description: 'Postgres',
+        hover_text: 'The most loved backend database',
+        type: ['type-1'],
+      },
+      {
+        title: 'Nj',
+        description: 'Neo4j',
+        hover_text: 'The most connected backend database',
+        type: ['type-1'],
+      },
+      {
+        title: 'Mo',
+        description: 'Mongo DB',
+        hover_text: 'The most loved no-sql backend database',
+        type: ['type-1'],
+      },
+
+      {
+        title: 'Bo',
+        description: 'Bootstrap',
+        hover_text: 'The most familiar css framework',
+        type: ['type-1'],
+      },
+      {
+        title: 'Ma',
+        description: 'Materilize',
+        hover_text: 'The react css framework',
+        type: ['type-1'],
+      },
+      {
+        title: 'Rn',
+        description: 'React Native',
+        hover_text: 'The best known mobile platform',
+        type: ['type-3'],
+      },
+      {
+        title: 'An',
+        description: 'Android',
+        hover_text: 'The best familiar mobile platform',
+        type: ['type-3'],
+      },
+      {
+        title: 'Gi',
+        description: 'Git',
+        hover_text: 'The most loved version control system',
+        type: ['type-4'],
+      },
+      {
+        title: 'Ps',
+        description: 'Photoshop',
+        hover_text: 'The best design tool',
+        type: ['type-4'],
+      },
+      {
+        title: 'Ai',
+        description: 'Illustrator',
+        hover_text: 'The best vector design tool',
+        type: ['type-4'],
+      },
+      {
+        title: 'Xd',
+        description: 'Adobe XD',
+        hover_text: 'The best ui design tool',
+        type: ['type-4'],
+      },
+      {
+        title: 'Li',
+        description: 'Linux',
+        hover_text: 'The most familiary desktop platform',
+        type: ['type-4'],
+      },
+      {
+        title: 'Do',
+        description: 'Docker',
+        hover_text: 'The most used deployment companion',
+        type: ['type-4'],
+      },
+
+      {
+        title: 'Wp',
+        description: 'Webpack',
+        hover_text: 'The most used package bundiler',
+        type: ['type-4'],
+      },
+    ];
+
+    periodic_table_data = periodic_table_data.map(function (elements_data) {
+      elements_data.type.push('animate-timing-' + getRandomInt(1, 4));
+      return elements_data;
+    });
+
+    new Vue({
+      el: '#periodic_table',
+      data: {
+        periodic_table_data: periodic_table_data,
+      },
+    });
+    new Vue({
+      el: '#timeline',
+      data: function () {
+        return {
+          selected_option: 'Education',
+          option_list: [
+            'Education',
+            'Experince',
+            'Achievements',
+            'Trainings',
+          ],
+          db: {
+            Education: [
+              {
+                school: 'College Of Engineering Poonjar',
+                address: '',
+                course: 'B.Tech - Computer Science & Engineering',
+                yearStart: '2016',
+                yearEnd: '2020',
+              },
+              {
+                school: 'SMV HSS Poonjar',
+                address: '',
+                course: 'Senior Secondary - 12th',
+                yearStart: '2014',
+                yearEnd: '2015',
+              },
+              {
+                school: 'ST Pauls HS Valiyakumaramangalam',
+                address: '',
+                course: 'Higher Secondary - 10th',
+                yearStart: '2000',
+                yearEnd: '2014',
+              },
+            ],
+            Experince: [
+              {
+                school: 'Software Engineering Intern',
+                address: 'Full Stack Developer',
+                course: '@Prepfully - Internship',
+                yearStart: '2020',
+                yearEnd: 'now',
+              },
+              {
+                school: 'Software Engineering Intern',
+                address: 'Full Stack Developer',
+                course: '@Preptick - Internship - 9 Months',
+                yearStart: '2019',
+                yearEnd: '2020',
+              },
+              {
+                school: 'Web Developer',
+                address: 'Full Stack Developer',
+                course: '@Integrtr - Internship - 2 Month+',
+                yearStart: '2018',
+                yearEnd: '2018',
+              },
+              {
+                school: 'Software Development Intern',
+                address: 'Frontend Developer',
+                course: '@CashPositive - Internship - 2.5 Month',
+                yearStart: '2018',
+                yearEnd: '2018',
+              },
+              {
+                school: 'Web Development',
+                address: 'PHP Developer',
+                course: '@Srishti Innovative - Internship - 1 Month',
+                yearStart: '2018',
+                yearEnd: '2018',
+              },
+              {
+                school: 'Software Development Intern',
+                address: 'Python Developer',
+                course: '@Pybotic Labs - Internship - 1 Month',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'Web Development',
+                address: 'Full Stack Developer',
+                course: '@Hasura - Internship - 3 Month',
+                yearStart: '2016',
+                yearEnd: '2017',
+              },
+            ],
+            Achievements: [
+              {
+                school: 'IMAD Toper - NPTEL Exam',
+                address: 'Passed with 91%',
+                course: 'IMAD - NPTEL',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'HPDF High Performer ',
+                address: 'Awarded For Superior performance',
+                course: 'HPDF - Internship',
+                yearStart: '2018',
+                yearEnd: '2017',
+              },
+              {
+                school: 'SIH 2017 Top 10',
+                address: 'Awarded For Best Solution',
+                course: 'SIH - Hackathon',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'SIH 2018 Special Mention',
+                address: 'Awarded For Best Competer',
+                course: 'SIH - Hackathon',
+                yearStart: '2018',
+                yearEnd: '2018',
+              },
+              {
+                school: 'SIH 2019 Special Mention',
+                address: 'Awarded For Best Competer',
+                course: 'SIH - Hackathon',
+                yearStart: '2019',
+                yearEnd: '2019',
+              },
+              {
+                school: 'Winner of Junkyard Wars',
+                address: 'Awarded for Winner',
+                course: ' Onyx 2K17 - Tech-Fest',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'Winner of Brahma',
+                address: 'Awarded for Winner',
+                course: ' Onyx 2K18 - Tech-Fest',
+                yearStart: '2018',
+                yearEnd: '2018',
+              },
+              {
+                school: 'OOAD Elite - NPTEL Exam',
+                address: 'Passed with 68%',
+                course: 'OOAD - NPTEL',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+            ],
+            Trainings: [
+              {
+                school: 'IMAD/NPTEL',
+                address: '',
+                course: 'NPTEL',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'OOAD/NPTEL',
+                address: '',
+                course: 'NPTEL',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+              {
+                school: 'IoT Challange 2016',
+                address: '',
+                course: 'I3indya Technology',
+                yearStart: '2017',
+                yearEnd: '2017',
+              },
+            ],
+          },
+        };
+      },
+      computed: {
+        timeline_data: function () {
+          return this.db[this.selected_option];
+        },
+      },
+    });
+
+    $(document).ready(() => {
+      var scroll = new SmoothScroll('a[href*="#"]');
+
+      new TypeIt('#app-type', {
+        strings: ['web app', 'mobile app'],
+        beforeString: (step, queue, instance) => { },
+        loop: true,
+        lifeLike: true,
+        breakLines: false,
+        nextStringDelay: [2000, 100],
+        loopDelay: [100, 2000],
+      }).go();
+
+      $('body').imagesLoaded(function () {
+        setTimeout(function () {
+          $('.loader').hide();
+        }, 2000);
+      });
+
+      $('.gallery-image').hover(
+        function () {
+          $('#' + $(this).data('details')).addClass('active');
+        },
+        function () {
+          $('#' + $(this).data('details')).removeClass('active');
+        }
+      );
+
+      $('.gallery-details').hover(
+        function () {
+          $('.gallery-image[data-details=' + $(this).attr('id') + ']')
+            .addClass('active')
+            .addClass('animated');
+        },
+        function () {
+          $('.gallery-image[data-details=' + $(this).attr('id') + ']')
+            .removeClass('active')
+            .removeClass('animated');
+        }
+      );
+    });
+  </script>
+</body>
+
+</html>
